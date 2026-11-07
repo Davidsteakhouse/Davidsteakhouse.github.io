@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>두 세계 영웅전</title>
+<meta name="description" content="두 세계가 하나로 합쳐진다. 판타지 왕국과 무림의 영웅 18인이 한 전장에 서는 판타지 × 무협 서바이버 액션, 두 세계 영웅전.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<meta property="og:type" content="website">
+<meta property="og:title" content="두 세계 영웅전">
+<meta property="og:description" content="두 세계가 하나로 합쳐진다. 판타지 왕국과 무림의 영웅 18인이 한 전장에 서는 판타지 × 무협 서바이버 액션.">
+<meta property="og:image" content="https://davidsteakhouse.github.io/heroes/media/keyart_wide.jpg">
+<meta property="og:url" content="https://davidsteakhouse.github.io/heroes/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d0a1c">
+<style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Web type (owner: the page gets its own face, not the game's): headings Noto Serif KR 900 - a heavy myeongjo like
+   fantasy/MMO official sites (로스트아크 쇼케이스) - body Noto Sans KR. The game's blade face stays in the logo picture. */
+/* Layout: one night between two worlds - fantasy blue on the left, wuxia jade on the right, a violet lightning seam
+   between them; every section is real game footage or game art, the copy stays short like the game's own banners. */
+:root {
+  --night: #0d0a1c;
+  --ink: #160f2b;
+  --panel: #1d1538;
+  --line: #3a2d63;
+  --cream: #fff4dc;
+  --muted: #b8acd8;
+  --gold: #ffd166;
+  --gold-deep: #e09a2b;
+  --fantasy: #74b0ff;
+  --wuxia: #55dcae;
+  --plum: #ff76ad;
+  --seam: #c9a8ff;
+  --display: "Noto Serif KR", "Apple SD Gothic Neo", "Malgun Gothic", serif;
+  --body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  overflow-x: clip;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 900; line-height: 1.15; text-wrap: balance; margin: 0; letter-spacing: 0.01em; }
+h2 { font-size: clamp(30px, 5.4vw, 52px); }
+h3 { font-size: 24px; }
+p { margin: 0; }
+.eyebrow { font-family: var(--body); font-weight: 700; font-size: 14px; letter-spacing: 0.22em; color: var(--gold); }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--display); font-size: 21px; letter-spacing: 0.02em;
+  padding: 16px 28px; border-radius: 14px; text-decoration: none; border: 3px solid var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-gold { background: linear-gradient(180deg, #ffe39a, var(--gold) 45%, var(--gold-deep)); color: #2a1606; box-shadow: 0 6px 0 #6b3d0c, 0 14px 30px rgba(255, 186, 72, .28); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #6b3d0c, 0 18px 36px rgba(255, 186, 72, .36); }
+.btn-gold:active { transform: translateY(4px); box-shadow: 0 2px 0 #6b3d0c; }
+.btn-ghost { background: rgba(255, 244, 220, .06); color: var(--cream); border-color: rgba(255, 244, 220, .35); }
+.btn-ghost:hover { background: rgba(255, 244, 220, .12); }
+.btn:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--seam); outline-offset: 3px; }
+
+/* hero */
+.hero { position: relative; min-height: 640px; display: grid; align-items: end; isolation: isolate; }
+.hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(13,10,28,.35) 0%, rgba(13,10,28,0) 30%, rgba(13,10,28,.55) 62%, var(--night) 100%); }
+.hero .wrap { padding-block: 120px 56px; display: grid; gap: 22px; justify-items: start; }
+.hero .logo { width: min(400px, 78vw); filter: drop-shadow(0 10px 24px rgba(0,0,0,.55)); }
+.hero .lede { font-size: clamp(17px, 2.2vw, 20px); font-weight: 500; max-width: 30em; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
+.hero .genre { font-family: var(--display); font-weight: 900; font-size: clamp(18px, 2.6vw, 24px); color: var(--gold); letter-spacing: .02em;
+  text-shadow: 0 2px 0 #1a0f2e, 0 0 12px rgba(0,0,0,.8); }
+.hero .lede b { color: var(--gold); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: rgba(13,10,28,.72); border: 1px solid rgba(255,244,220,.25); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* the lightning seam that separates sections */
+.seam { height: 46px; background:
+  linear-gradient(90deg, transparent, rgba(201,168,255,.0) 20%, rgba(201,168,255,.55) 50%, rgba(201,168,255,0) 80%, transparent) center/100% 2px no-repeat; position: relative; }
+.seam::before { content: ""; position: absolute; left: 50%; top: 4px; width: 22px; height: 38px; transform: translateX(-50%);
+  background: var(--seam); clip-path: polygon(55% 0, 20% 55%, 48% 55%, 30% 100%, 82% 40%, 52% 40%, 70% 0); filter: drop-shadow(0 0 10px var(--seam)); }
+
+/* trailer */
+.trailer { padding-block: 40px 72px; }
+.trailer .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+.trailer-copy { display: grid; gap: 18px; }
+.trailer-copy ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: beat; }
+.trailer-copy li { counter-increment: beat; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; align-items: baseline; color: var(--muted); }
+.trailer-copy li::before { content: attr(data-t); font-family: var(--display); color: var(--gold); font-variant-numeric: tabular-nums; }
+.trailer-copy li strong { color: var(--cream); font-weight: 700; }
+.phone {
+  position: relative; justify-self: center; width: min(360px, 100%); aspect-ratio: 9 / 16;
+  border-radius: 34px; padding: 10px; background: linear-gradient(160deg, #3b2f66, #140e28);
+  box-shadow: 0 0 0 2px #5a4a92, 0 30px 70px rgba(0,0,0,.6), 0 0 80px rgba(201,168,255,.18);
+}
+.phone video { width: 100%; height: 100%; object-fit: cover; border-radius: 26px; background: #000; }
+.sound {
+  position: absolute; right: 22px; bottom: 22px; font: 700 14px var(--body); color: var(--cream);
+  background: rgba(13,10,28,.78); border: 1px solid rgba(255,244,220,.35); border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+
+/* hero headline: the two worlds' colours meet in gold */
+.unite { font-size: clamp(34px, 6.6vw, 64px); line-height: 1.08; display: flex; flex-wrap: wrap; gap: 0 .35em;
+  filter: drop-shadow(0 3px 0 #1a0f2e) drop-shadow(0 0 2px #1a0f2e) drop-shadow(0 8px 16px rgba(0,0,0,.75)); }
+.unite span { background-clip: text; -webkit-background-clip: text; color: transparent; background-size: 220% 100%; animation: shine 3.2s ease-out .4s 1 both; }
+.unite .fn { background-image: linear-gradient(90deg, #cfe3ff, var(--fantasy) 40%, var(--gold) 60%, #cfe3ff); }
+.unite .wx { background-image: linear-gradient(90deg, var(--gold), #fff1c2 40%, var(--wuxia) 60%, var(--gold)); }
+@keyframes shine { from { background-position: 100% 0; } to { background-position: 0 0; } }
+
+/* two worlds become one: fantasy (left) and wuxia (right) footage meet at a lightning seam */
+.merge { padding-block: 24px 72px; }
+.merge .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+.merge-stage { position: relative; aspect-ratio: 9 / 10; border-radius: 26px; overflow: hidden; border: 3px solid var(--ink);
+  box-shadow: 0 0 0 2px var(--line), 0 26px 60px rgba(0,0,0,.55), 0 0 90px rgba(201,168,255,.16); background: #07050f; }
+.half { position: absolute; top: 0; bottom: 0; width: 50%; overflow: hidden; transition: transform 1.1s cubic-bezier(.2,.9,.2,1); }
+.half.left { left: 0; }
+.half.right { right: 0; }
+.half video { position: absolute; top: 0; height: 100%; width: 200%; max-width: none; object-fit: cover; }
+.half.left video { left: -50%; }
+.half.right video { left: -50%; }
+.world-tag { position: absolute; top: 14px; font-family: var(--display); font-size: 18px; padding: 4px 12px; border-radius: 999px; background: rgba(13,10,28,.8); }
+.world-tag.fn { left: 14px; color: var(--fantasy); }
+.world-tag.wx { right: 14px; color: var(--wuxia); }
+.merge-stage .bolt { position: absolute; left: 50%; top: -2%; height: 104%; width: 46px; transform: translateX(-50%); overflow: visible; }
+.bolt polyline { fill: none; stroke: #fff; stroke-width: 5; stroke-linejoin: round; filter: drop-shadow(0 0 6px var(--seam)) drop-shadow(0 0 14px var(--seam)); vector-effect: non-scaling-stroke; }
+.burst { position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,.95), rgba(214,190,255,.55) 22%, rgba(214,190,255,0) 55%); }
+/* before it scrolls into view the halves stand apart; it rests merged (also with no script) */
+.merge-stage.apart .half.left { transform: translateX(-14%); }
+.merge-stage.apart .half.right { transform: translateX(14%); }
+.merge-stage.apart .bolt polyline { animation: flicker .5s steps(2) infinite; }
+.merge-stage.merged .burst { animation: burst .9s ease-out .9s 1 both; }
+.merge-stage.merged .bolt polyline { animation: flare 1.2s ease-out .7s 1 both; }
+@keyframes flicker { 50% { opacity: .55; } }
+@keyframes burst { 0% { opacity: 0; } 25% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes flare { 0% { stroke-width: 5; } 30% { stroke-width: 14; } 100% { stroke-width: 5; } }
+.merge-copy { display: grid; gap: 16px; }
+.merge-copy h2 em { font-style: normal; background: linear-gradient(90deg, var(--fantasy), var(--gold) 50%, var(--wuxia)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.merge-copy p { color: var(--muted); }
+
+/* the release badge beside the trailer button (not a link until the store page is live) */
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 14px 20px; border-radius: 14px; border: 2px dashed rgba(255,244,220,.4);
+  color: var(--cream); font-weight: 700; font-size: 16px; background: rgba(13,10,28,.55); }
+.badge::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--wuxia); box-shadow: 0 0 10px var(--wuxia); }
+.hero .summary { font-size: 14px; font-weight: 500; color: rgba(255,244,220,.82); letter-spacing: .04em; text-shadow: 0 1px 6px rgba(0,0,0,.8); }
+
+/* game information */
+.info { padding-block: 64px 72px; }
+.info .wrap { display: grid; gap: 18px; max-width: 860px; }
+.info p.lead { color: var(--muted); }
+.spec { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; background: var(--panel); border: 1px solid var(--line); }
+.spec th, .spec td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.spec tr:last-child th, .spec tr:last-child td { border-bottom: 0; }
+.spec th { width: 7.5em; color: var(--gold); font-weight: 700; white-space: nowrap; }
+.spec td { color: var(--cream); }
+
+/* features */
+.features { padding-block: 56px 72px; background: radial-gradient(1200px 500px at 50% 0, #1b1338 0%, var(--night) 70%); }
+.features .head { display: grid; gap: 10px; margin-bottom: 36px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.card { display: grid; gap: 14px; align-content: start; }
+.clip { position: relative; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; border: 3px solid var(--ink);
+  box-shadow: 0 0 0 2px var(--line), 0 18px 40px rgba(0,0,0,.45); background: #000; }
+.clip video, .clip img { width: 100%; height: 100%; object-fit: cover; }
+.clip .tag { position: absolute; left: 12px; top: 12px; font: 700 13px var(--body); padding: 4px 10px; border-radius: 999px; background: rgba(13,10,28,.8); }
+.card[data-world="fantasy"] .tag { color: var(--fantasy); }
+.card[data-world="wuxia"] .tag { color: var(--wuxia); }
+.card[data-world="both"] .tag { color: var(--gold); }
+.card h3 { font-size: 26px; }
+.card p { color: var(--muted); }
+
+/* heroes */
+.heroes { padding-block: 64px 72px; }
+.heroes .head { display: grid; gap: 10px; margin-bottom: 30px; }
+.worlds { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+.world { border-radius: 24px; padding: 22px; display: grid; gap: 16px; border: 2px solid var(--line); }
+.world.fn { background: linear-gradient(170deg, rgba(116,176,255,.16), rgba(13,10,28,.2) 60%); }
+.world.wx { background: linear-gradient(190deg, rgba(85,220,174,.16), rgba(13,10,28,.2) 60%); }
+.world header { display: grid; gap: 4px; }
+.world h3 { font-size: 30px; }
+.world.fn h3 { color: var(--fantasy); }
+.world.wx h3 { color: var(--wuxia); }
+.world header p { color: var(--muted); font-size: 15px; }
+.roster { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hero-card { display: grid; justify-items: center; gap: 4px; padding: 10px 6px 12px; border-radius: 16px; background: rgba(13,10,28,.55); border: 1px solid rgba(255,244,220,.08); text-align: center; }
+.hero-card img { height: 96px; width: auto; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(0,0,0,.5)); transition: transform .15s ease; }
+.hero-card:hover img { transform: translateY(-4px) scale(1.05); }
+.hero-card b { font-family: var(--display); font-weight: 900; font-size: 18px; }
+.hero-card span { font-size: 12px; color: var(--muted); line-height: 1.35; }
+
+/* depth: numbers that are the game's own */
+.depth { padding-block: 56px 64px; }
+.depth .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+.stat { padding: 16px 18px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+.stat b { display: block; font-family: var(--display); font-weight: 900; font-size: 34px; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+.depth .shot { justify-self: center; width: min(300px, 100%); border-radius: 22px; overflow: hidden; border: 3px solid var(--ink); box-shadow: 0 0 0 2px var(--line), 0 20px 50px rgba(0,0,0,.5); }
+
+footer { padding-bottom: 96px; } }
+footer { padding-block: 36px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+footer code { font-family: var(--body); color: var(--cream); user-select: all; }
+
+@media (max-width: 900px) {
+  .trailer .wrap, .depth .wrap, .merge .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .worlds { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .hero { min-height: 600px; }
+  .hero .wrap { padding-block: 96px 40px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .clip { max-width: 360px; }
+  .btn { width: 100%; }
+  .cta-row { width: 100%; }
+  .hero-card img { height: 80px; }
+}
+@media (max-width: 560px) {
+  .roster { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 31%; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding-bottom: 6px; scrollbar-width: thin; }
+  .hero-card { scroll-snap-align: start; }
+  .world .swipe { display: block; }
+}
+.world .swipe { display: none; font-size: 13px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .hero-card img, .half { transition: none; }
+  .unite span { animation: none; background-position: 0 0; }
+  .merge-stage .burst, .merge-stage .bolt polyline { animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero" aria-label="두 세계 영웅전">
+  <picture>
+    <source media="(min-width: 900px)" type="image/webp" srcset="media/keyart_wide.webp">
+    <source media="(min-width: 900px)" srcset="media/keyart_wide.jpg">
+    <source type="image/webp" srcset="media/keyart.webp">
+    <img src="media/keyart.jpg" fetchpriority="high" alt="성검기사 레오와 화산파 매화검수 청운이 두 세계의 마물 무리 앞에 등을 맞대고 선 키아트">
+  </picture>
+  <div class="wrap">
+    <img class="logo" src="media/logo.png" alt="두 세계 영웅전 — 서바이버">
+    <h1 class="unite"><span class="fn">두 세계가</span> <span class="wx">하나로 합쳐진다</span></h1>
+    <p class="genre">판타지 × 무협 · 영웅 교대 서바이버 액션</p>
+    <p class="lede">하늘에서 떨어진 달의 조각이 두 세계를 물들였다. 판타지 왕국과 무림의 영웅 18인이 한 전장에서 밀려드는 마물에 맞선다.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#trailer">트레일러 보기 ▶</a>
+      <span class="badge">구글 플레이 출시 예정</span>
+    </div>
+    <p class="summary">안드로이드 · 무료 · 오프라인 플레이 지원</p>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<section class="trailer" id="trailer">
+  <div class="wrap">
+    <div class="trailer-copy">
+      <span class="eyebrow">공식 트레일러</span>
+      <h2>왕국의 성검,<br>화산의 매화검</h2>
+      <p style="color: var(--muted)">모든 장면은 실제 게임 플레이 화면이다. 소리를 켜면 배경 음악과 타격음을 그대로 들을 수 있다.</p>
+      <ol>
+        <li data-t="0:00"><span><strong>왕국의 성검</strong> · 레오 「성검 강림」</span></li>
+        <li data-t="0:04"><span><strong>화산의 매화검</strong> · 청운 「매화만개」</span></li>
+        <li data-t="0:06"><span><strong>두 세계가 하나로 합쳐진다</strong> · 영웅 18인</span></li>
+        <li data-t="0:11"><span><strong>움직임이 곧 공격</strong></span></li>
+        <li data-t="0:13"><span><strong>전세를 가르는 선택</strong> · 쌓이는 화력</span></li>
+        <li data-t="0:19"><span><strong>동료 3인 참전</strong> · 영웅 교대 · 필살기 연쇄</span></li>
+        <li data-t="0:23"><span><strong>보스전</strong> · 운학 「태극 만검귀종」</span></li>
+      </ol>
+    </div>
+    <div class="phone">
+      <video id="trailerVideo" src="media/trailer.mp4" poster="media/trailer.jpg" muted loop playsinline preload="none" controls aria-label="두 세계 영웅전 공식 트레일러"></video>
+      <button class="sound" id="soundBtn" type="button" aria-pressed="false">🔊 소리 켜기</button>
+    </div>
+  </div>
+</section>
+
+<section class="merge" aria-labelledby="mergeTitle">
+  <div class="wrap">
+    <div class="merge-stage" id="mergeStage">
+      <div class="half left"><video data-loop src="media/clip_ult.mp4" poster="media/clip_ult.jpg" muted loop playsinline preload="none" aria-label="판타지 왕국: 레오의 성검 강림"></video><span class="world-tag fn">판타지 왕국 · 영웅 9인</span></div>
+      <div class="half right"><video data-loop src="media/clip_wuxia.mp4" poster="media/clip_wuxia.jpg" muted loop playsinline preload="none" aria-label="무림: 청운의 매화만개"></video><span class="world-tag wx">무림 · 영웅 9인</span></div>
+      <svg class="bolt" viewBox="0 0 60 600" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="34,0 18,70 40,130 16,210 38,280 20,350 42,420 22,500 36,600" />
+      </svg>
+      <div class="burst" aria-hidden="true"></div>
+    </div>
+    <div class="merge-copy">
+      <span class="eyebrow">세계관</span>
+      <h2 id="mergeTitle">달의 조각이 물들인<br><em>두 개의 세계</em></h2>
+      <p>하늘에서 떨어진 달의 조각이 두 세계를 물들였다. 성검기사와 마도사가 지키는 판타지 왕국, 아홉 문파의 고수가 무공을 겨루는 무림이 하나의 전장으로 맞닿는다.</p>
+      <p>한 세계의 마지막 장을 돌파하면 두 세계가 맞닿는 50층 「월식의 탑」이 열린다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="features" aria-labelledby="whyTitle">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">게임 특징</span>
+      <h2 id="whyTitle">쌓이는 화력, 이어지는 필살기</h2>
+      <p style="color: var(--muted)">판타지의 마법과 무림의 검기가 한 화면에서 맞부딪힌다.</p>
+    </div>
+    <div class="grid">
+      <article class="card" data-world="fantasy">
+        <div class="clip"><video data-loop src="media/clip_ult.mp4" poster="media/clip_ult.jpg" muted loop playsinline preload="none"></video><span class="tag">필살기 · 레오</span></div>
+        <h3>영웅마다 다른 필살기</h3>
+        <p>게이지가 차면 전용 컷인과 함께 필살기가 발동해 전장의 마물을 쓸어낸다. 레오의 「성검 강림」, 청운의 「매화만개」, 운학의 「태극 만검귀종」.</p>
+      </article>
+      <article class="card" data-world="wuxia">
+        <div class="clip"><video data-loop src="media/clip_wuxia.mp4" poster="media/clip_wuxia.jpg" muted loop playsinline preload="none"></video><span class="tag">판타지 × 무협 · 청운</span></div>
+        <h3>한 전장에 선 두 세계</h3>
+        <p>왕국의 성검과 마법, 무림의 검법과 권법이 한 화면에서 어우러진다. 세계마다 다른 적과 무기, 다른 이야기가 펼쳐진다.</p>
+      </article>
+      <article class="card" data-world="fantasy">
+        <div class="clip"><video data-loop src="media/clip_control.mp4" poster="media/clip_control.jpg" muted loop playsinline preload="none"></video><span class="tag">조작</span></div>
+        <h3>움직임이 곧 공격</h3>
+        <p>화면을 끌어 이동하면 공격은 자동으로 이루어진다. 포위망의 빈틈을 읽는 움직임이 전투의 흐름을 바꾼다.</p>
+      </article>
+      <article class="card" data-world="fantasy">
+        <div class="clip"><video data-loop src="media/clip_levelup.mp4" poster="media/clip_levelup.jpg" muted loop playsinline preload="none"></video><span class="tag">레벨업</span></div>
+        <h3>전세를 가르는 선택</h3>
+        <p>레벨이 오를 때마다 강화 카드 세 장 중 하나를 고른다. 무기가 쌓일수록 화력이 불어나고 전장이 화려해진다.</p>
+      </article>
+      <article class="card" data-world="both">
+        <div class="clip"><video data-loop src="media/clip_party.mp4" poster="media/clip_party.jpg" muted loop playsinline preload="none"></video><span class="tag">동료 · 교대</span></div>
+        <h3>영웅 교대 · 필살기 연쇄</h3>
+        <p>동료 최대 3명이 함께 싸운다. 필살기를 쓴 뒤 주인공을 교대하면 다음 영웅의 필살기를 곧바로 이어 쓴다.</p>
+      </article>
+      <article class="card" data-world="wuxia">
+        <div class="clip"><video data-loop src="media/clip_boss.mp4" poster="media/clip_boss.jpg" muted loop playsinline preload="none"></video><span class="tag">보스전 · 운학</span></div>
+        <h3>장의 끝을 지키는 보스</h3>
+        <p>장마다 마지막 단계에서 보스와 맞붙는다. 슬라임 킹부터 균열의 수문장까지, 예고된 공격을 피하고 빈틈에 필살기를 꽂는다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<section class="heroes" aria-labelledby="heroesTitle">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">영웅 18인</span>
+      <h2 id="heroesTitle">왕국의 수호자와 강호의 고수</h2>
+    </div>
+    <div class="worlds">
+      <section class="world fn" aria-label="판타지 왕국 영웅">
+        <header><h3>판타지 왕국 · 아르카디아 원정대</h3><p>검과 마법, 포격으로 전선을 여는 왕국의 영웅</p><span class="swipe">옆으로 넘겨 9인 보기 →</span></header>
+        <div class="roster" id="rosterFn"></div>
+      </section>
+      <section class="world wx" aria-label="무림 영웅">
+        <header><h3>무림 · 청운 협곡</h3><p>아홉 문파의 절기를 익힌 강호의 무인</p><span class="swipe">옆으로 넘겨 9인 보기 →</span></header>
+        <div class="roster" id="rosterWx"></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="depth" aria-labelledby="depthTitle">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">콘텐츠</span>
+      <h2 id="depthTitle">전장을 넓히는 네 가지 도전</h2>
+      <div class="stats">
+        <div class="stat"><b>5장 · 25단계</b><span>세계마다 이어지는 장과 보스</span></div>
+        <div class="stat"><b>50층</b><span>두 세계가 맞닿는 「월식의 탑」</span></div>
+        <div class="stat"><b>위험도 ★5</b><span>돌파한 장을 더 높은 위험도로 재도전</span></div>
+        <div class="stat"><b>명예의 전당</b><span>상위 기록 10개와 영웅 시상대</span></div>
+      </div>
+    </div>
+    <img class="shot" src="media/hall.jpg" alt="명예의 전당 화면: 시상대 위 1·2·3위 영웅과 4~10위 기록">
+  </div>
+</section>
+
+<section class="info" aria-labelledby="infoTitle">
+  <div class="wrap">
+    <span class="eyebrow">게임 정보</span>
+    <h2 id="infoTitle" style="font-size: clamp(28px, 4.4vw, 42px)">기본 정보</h2>
+    <table class="spec">
+      <tr><th scope="row">장르</th><td>판타지 × 무협 영웅 교대 서바이버 액션</td></tr>
+      <tr><th scope="row">플랫폼</th><td>안드로이드 (구글 플레이)</td></tr>
+      <tr><th scope="row">가격</th><td>무료</td></tr>
+      <tr><th scope="row">이용 환경</th><td>가입·로그인 없이 시작, 인터넷 연결 없이 플레이 가능</td></tr>
+      <tr><th scope="row">출시</th><td>구글 플레이 정식 출시 준비 중</td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>두 세계 영웅전 · smartdaddy · 로고 글꼴 <a href="media/DNFForgedBlade-LICENSE.txt" target="_blank" rel="noopener">던파 연단된 칼날</a>(© NEOPLE)</span>
+    <span><a href="privacy.html" target="_blank" rel="noopener">개인정보처리방침</a> · 문의 <code>kimdanny586@gmail.com</code></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var heroes = [
+    ["knight", "레오", "은빛 성기사단 성검기사"], ["witch", "미라", "별의 탑 성좌 마도사"], ["ranger", "핀", "엘프 숲 수호단 그림자 레인저"],
+    ["cleric", "루미", "태양의 사제"], ["dwarf", "볼트", "드워프 포병"], ["fox", "코코", "번개 여우"],
+    ["fairy", "유키", "눈꽃 요정"], ["merc", "볼크", "철혈 용병단장 · 용병왕"], ["fn_seren", "세린", "오러의 소드 마스터"],
+    ["wx_plum", "청운", "화산파 매화검수"], ["wx_monk", "철산", "소림 권승"], ["wx_taoist", "소련", "청성파 여도사"],
+    ["wx_healer", "연화", "아미파 의녀"], ["wx_staff", "홍칠", "개방 방주"], ["wx_thunder", "뇌백", "곤륜파 뇌검 도사"],
+    ["wx_zhongnan", "현강", "종남파 천강검수"], ["wx_diancang", "단영", "점창파 사일검수"], ["wx_sword", "운학", "무당파 태극검수"]
+  ];
+  heroes.forEach(function (h, i) {
+    var el = document.createElement("div");
+    el.className = "hero-card";
+    el.innerHTML = '<img loading="lazy" src="media/hero_' + h[0] + '.webp" alt="' + h[1] + '"><b>' + h[1] + '</b><span>' + h[2] + '</span>';
+    document.getElementById(i < 9 ? "rosterFn" : "rosterWx").appendChild(el);
+  });
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var loops = Array.prototype.slice.call(document.querySelectorAll("video[data-loop]"));
+  function play(v) { var p = v.play(); if (p && p.catch) { p.catch(function () {}); } }
+  if (!reduce && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { if (e.target.preload === "none") { e.target.preload = "auto"; } play(e.target); }
+        else { e.target.pause(); }
+      });
+    }, { threshold: 0.35 });
+    loops.forEach(function (v) { io.observe(v); });
+  } else {
+    loops.forEach(function (v) { v.controls = true; });
+  }
+
+  // the two halves start apart and meet when the stage scrolls into view (merged at rest without the observer)
+  var stage = document.getElementById("mergeStage");
+  if (!reduce && "IntersectionObserver" in window && stage.getBoundingClientRect().top > window.innerHeight * 0.6) {
+    stage.classList.add("apart");
+    var mo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          stage.classList.remove("apart");
+          stage.classList.add("merged");
+          mo.disconnect();
+        }
+      });
+    }, { threshold: 0.55 });
+    mo.observe(stage);
+  }
+
+  var tv = document.getElementById("trailerVideo");
+  var btn = document.getElementById("soundBtn");
+  if (!reduce && "IntersectionObserver" in window) {
+    var to = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { if (tv.preload === "none") { tv.preload = "auto"; } play(tv); }
+        else if (tv.muted) { tv.pause(); }
+      });
+    }, { threshold: 0.5 });
+    to.observe(tv);
+  }
+  btn.addEventListener("click", function () {
+    tv.muted = !tv.muted;
+    if (!tv.muted) { tv.currentTime = 0; play(tv); }
+    btn.textContent = tv.muted ? "🔊 소리 켜기" : "🔇 소리 끄기";
+    btn.setAttribute("aria-pressed", String(!tv.muted));
+  });
+  tv.addEventListener("volumechange", function () {
+    btn.textContent = tv.muted ? "🔊 소리 켜기" : "🔇 소리 끄기";
+  });
+})();
+</script>
+</body>
+</html>
