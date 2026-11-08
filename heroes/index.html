@@ -206,21 +206,12 @@ p { margin: 0; }
 .hero-card b { font-family: var(--display); font-weight: 900; font-size: 18px; }
 .hero-card span { font-size: 12px; color: var(--muted); line-height: 1.35; }
 
-/* depth: numbers that are the game's own */
-.depth { padding-block: 56px 64px; }
-.depth .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
-.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
-.stat { padding: 16px 18px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
-.stat b { display: block; font-family: var(--display); font-weight: 900; font-size: 34px; color: var(--gold); font-variant-numeric: tabular-nums; line-height: 1.1; }
-.stat span { color: var(--muted); font-size: 14px; }
-.depth .shot { justify-self: center; width: min(300px, 100%); border-radius: 22px; overflow: hidden; border: 3px solid var(--ink); box-shadow: 0 0 0 2px var(--line), 0 20px 50px rgba(0,0,0,.5); }
-
 footer { padding-block: 36px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
 footer code { font-family: var(--body); color: var(--cream); user-select: all; }
 
 @media (max-width: 900px) {
-  .trailer .wrap, .depth .wrap, .merge .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .trailer .wrap, .merge .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .worlds { grid-template-columns: minmax(0, 1fr); }
 }
@@ -364,22 +355,6 @@ footer code { font-family: var(--body); color: var(--cream); user-select: all; }
         <div class="roster" id="rosterWx"></div>
       </section>
     </div>
-  </div>
-</section>
-
-<section class="depth" aria-labelledby="depthTitle">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">콘텐츠</span>
-      <h2 id="depthTitle">이야기, 탑, 그리고 기록</h2>
-      <div class="stats">
-        <div class="stat"><b>5장 · 25단계</b><span>세계마다 다섯 장의 이야기와 보스</span></div>
-        <div class="stat"><b>50층</b><span>두 세계의 땅이 쌓인 「월식의 탑」</span></div>
-        <div class="stat"><b>위험도 ★5</b><span>클리어한 장을 더 높은 위험도로 다시 도전</span></div>
-        <div class="stat"><b>명예의 전당</b><span>최고 기록 10개와 1~3위 시상대</span></div>
-      </div>
-    </div>
-    <img class="shot" src="media/hall.jpg" alt="명예의 전당 화면: 시상대 위 1·2·3위 영웅과 4~10위 기록">
   </div>
 </section>
 
